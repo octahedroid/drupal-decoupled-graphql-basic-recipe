@@ -1,0 +1,175 @@
+name: 'Drupal Decoupled'
+description: 'Drupal installation based on standard that uses GQL to make decoupled site'
+type: 'Site'
+recipes:
+  # Core recipes with basic functionality
+  # Content types
+  - core/recipes/article_content_type
+  - core/recipes/article_tags
+  - core/recipes/page_content_type
+  # Adding tags vocabulary and taxonomy field to article
+  - core/recipes/tags_taxonomy
+  # Adding format editors
+  - core/recipes/basic_html_format_editor
+  - core/recipes/full_html_format_editor
+  - core/recipes/restricted_html_format
+  # Adding user roles
+  - core/recipes/administrator_role
+  - core/recipes/content_editor_role
+  # Adding core recommended maintenance modules
+  - core/recipes/core_recommended_maintenance
+
+install:
+  # Core
+  - config
+  - help
+  - contextual
+  - datetime
+  - field_ui
+  - history
+  - link
+  - menu_link_content
+  - menu_ui
+  - options
+  - views_ui
+  # Contrib
+  - admin_toolbar
+  - admin_toolbar_tools
+  - admin_toolbar_search
+  - gin
+  - gin_login
+  - gin_toolbar
+  - coffee
+  - metatag
+  - pathauto
+  - redirect
+  - subpathauto
+  - view_unpublished
+  - simple_oauth
+  # Decoupled contrib
+  - decoupled_preview_iframe
+  - visual_editor
+  - graphql_compose
+  - graphql_compose_edges
+  - graphql_compose_image_style
+  - graphql_compose_menus
+  - graphql_compose_routes
+  - graphql_compose_users
+  - graphql_compose_views
+  - graphql_compose_metatags
+  - graphql_compose_preview
+
+config:
+  import:
+    admin_toolbar: '*'
+    admin_toolbar_tools: '*'
+    admin_toolbar_search: '*'
+    gin:
+      - gin.settings
+      - block.block.gin_breadcrumbs
+      - block.block.gin_content
+      - block.block.gin_help
+      - block.block.gin_local_actions
+      - block.block.gin_messages
+      - block.block.gin_page_title
+      - block.block.gin_primary_local_tasks
+    gin_login: '*'
+    coffee: '*'
+    metatag: '*'
+    pathauto: '*'
+    redirect: '*'
+    subpathauto: '*'
+    simple_oauth: '*'
+    # Decoupled contrib
+    graphql_compose: '*'
+  actions:
+    # Set and unset Gin blocks.
+    block.block.gin_admin:
+      simple_config_update:
+        status: false
+    block.block.gin_branding:
+      simple_config_update:
+        status: false
+    block.block.gin_local_actions:
+      simple_config_update:
+        region: content
+        weight: -10
+    block.block.gin_local_tasks:
+      simple_config_update:
+        status: false
+    block.block.gin_page_title:
+      simple_config_update:
+        region: header
+        weight: -10
+    block.block.gin_primary_local_tasks:
+      simple_config_update:
+        region: header
+        weight: -5
+        settings.secondary: true
+    block.block.gin_tools:
+      simple_config_update:
+        status: false
+    # Set blocks to us as default content
+    block.block.gin_content:
+      simple_config_update:
+        status: content
+        weight: -5
+    # Update the admin theme to Gin in Theme settings.
+    node.settings:
+      simple_config_update:
+        use_admin_theme: true
+    system.theme:
+      simple_config_update:
+        admin: 'gin'
+        default: 'gin'
+    # Set metatag defaults.
+    metatag.metatag_defaults.global:
+      simple_config_update:
+        tags.canonical_url: '[current-page:url]'
+        tags.title: '[current-page:title] | [site:name]'
+    metatag.metatag_defaults.node:
+      simple_config_update:
+        tags.abstract: '[node:summary]'
+        tags.canonical_url: '[node:url]'
+        tags.description: '[node:summary]'
+        tags.image_src: '[node:field_image:entity:field_media_image:entity:url]'
+        tags.title: '[node:title] | [site:name]'
+     # Set permissions for content editor role.
+    user.role.content_editor:
+      ensure_exists:
+        id: content_editor
+      grantPermissions:
+        - 'use text format basic_html'
+        - 'use text format full_html'
+    user.role.previewer:
+      createIfNotExists:
+        id: previewer
+        label: Previewer
+        weight: 4
+        is_admin: false
+        permissions:
+          - 'execute graphql_compose_server arbitrary graphql requests'
+          - 'view all revisions'
+          - 'view any unpublished content'
+          - 'view graphql_compose_preview entity'
+          - 'view own unpublished content'
+    user.role.viewer:
+      createIfNotExists:
+        id: viewer
+        label: Viewer
+        weight: 5
+        is_admin: false
+        permissions:
+          - 'execute graphql_compose_server arbitrary graphql requests'
+    simple_oauth.settings:
+      simple_config_update:
+        access_token_expiration: 2592000
+        authorization_code_expiration: 2592000
+        refresh_token_expiration: 2592000
+        token_cron_batch_size: 0
+        public_key: ../public.key
+        private_key: ../private.key
+        remember_clients: true
+        use_implicit: false
+        disable_openid_connect: false
+

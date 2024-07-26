@@ -1,0 +1,43 @@
+_meta:
+  version: '1.0'
+  entity_type: user
+  uuid: 7acaaa1f-4fd0-4bf2-805c-4340e7b6e1e8
+  default_langcode: en
+default:
+  preferred_langcode:
+    -
+      value: en
+  name:
+    -
+      value: editor
+  pass:
+    -
+      value: $2y$10$/9wT2givn5308DhOEtpsOunkb2/Mg3lRqg.HLKHXfjM0fa0rnWPV.
+      existing: ''
+      pre_hashed: false
+  mail:
+    -
+      value: editor@example.org
+  timezone:
+    -
+      value: America/Los_Angeles
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1720484707
+  access:
+    -
+      value: 0
+  login:
+    -
+      value: 0
+  roles:
+    -
+      target_id: content_editor
+  path:
+    -
+      alias: ''
+      langcode: en
+      pathauto: 1

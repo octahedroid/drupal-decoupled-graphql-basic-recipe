@@ -1,0 +1,71 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: fadac2b2-8219-4798-a946-fd7ffd07a272
+  bundle: article
+  default_langcode: en
+  depends:
+    1bbe20fc-d8f0-4e71-ab28-326f6a6dfc70: file
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Hello Decoupled World!'
+  created:
+    -
+      value: 1722299460
+  promote:
+    -
+      value: true
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Hello Decoupled World! | Drush Site-Install'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras feugiat ligula in tellus vehicula, in consequat nisl suscipit. Vestibulum non sodales mi. Pellentesque nulla nunc, iaculis et diam ut, porttitor sodales purus. Morbi erat lorem, mattis et consectetur sit amet, egestas sed urna. Praesent faucibus aliquam felis, ac facilisis justo dapibus et. Integer aliquet laoreet quam, vitae posuere sem dapibus vel. In facilisis lorem nec volutpat tincidunt. Sed blandit maximus orci, faucibus congue tellus feugiat in. Aenean consectetur interdum ipsum at convallis.'
+    -
+      tag: meta
+      attributes:
+        name: abstract
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras feugiat ligula in tellus vehicula, in consequat nisl suscipit. Vestibulum non sodales mi. Pellentesque nulla nunc, iaculis et diam ut, porttitor sodales purus. Morbi erat lorem, mattis et consectetur sit amet, egestas sed urna. Praesent faucibus aliquam felis, ac facilisis justo dapibus et. Integer aliquet laoreet quam, vitae posuere sem dapibus vel. In facilisis lorem nec volutpat tincidunt. Sed blandit maximus orci, faucibus congue tellus feugiat in. Aenean consectetur interdum ipsum at convallis.'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'http://ddr-test.ddev.site/blog/hello-decoupled-world'
+  path:
+    -
+      alias: /blog/hello-decoupled-world
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras feugiat ligula in tellus vehicula, in consequat nisl suscipit. Vestibulum non sodales mi. Pellentesque nulla nunc, iaculis et diam ut, porttitor sodales purus. Morbi erat lorem, mattis et consectetur sit amet, egestas sed urna. Praesent faucibus aliquam felis, ac facilisis justo dapibus et. Integer aliquet laoreet quam, vitae posuere sem dapibus vel. In facilisis lorem nec volutpat tincidunt. Sed blandit maximus orci, faucibus congue tellus feugiat in. Aenean consectetur interdum ipsum at convallis. Duis commodo turpis vitae tellus porta commodo. Nullam sodales ante lectus, et iaculis metus dapibus eu.</p><p>&nbsp;</p><p>Praesent cursus sagittis purus, sed molestie nulla viverra in. Nulla a laoreet metus, non volutpat velit. Duis ipsum odio, porttitor id tellus at, malesuada interdum sapien. Etiam gravida mollis sem, ut rhoncus lacus tincidunt ut. Nulla tristique orci ac mi mattis vehicula eu semper sapien. Nullam blandit posuere turpis quis pretium. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus nec sodales est, et consectetur erat.</p>'
+      format: basic_html
+      summary: ''
+  field_image:
+    -
+      entity: 1bbe20fc-d8f0-4e71-ab28-326f6a6dfc70
+      alt: doc-tahedroid
+      title: ''
+      width: 2368
+      height: 1628

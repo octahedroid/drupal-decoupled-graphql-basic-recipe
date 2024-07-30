@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: 1bbe20fc-d8f0-4e71-ab28-326f6a6dfc70
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: doc-tahedroid_0.png
+  uri:
+    -
+      value: 'public://2024-07/doc-tahedroid_0.png'
+  filemime:
+    -
+      value: image/png
+  filesize:
+    -
+      value: 1015522
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1722299467

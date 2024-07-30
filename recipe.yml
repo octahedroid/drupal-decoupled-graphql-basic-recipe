@@ -83,6 +83,10 @@ config:
     # Decoupled contrib
     graphql_compose: '*'
   actions:
+    # Set home page
+    system.site:
+      simple_config_update:
+        page.front: /home
     # Set and unset Gin blocks.
     block.block.gin_admin:
       simple_config_update:

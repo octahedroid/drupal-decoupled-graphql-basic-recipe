@@ -1,0 +1,62 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: d0a0e48b-11e8-448c-8b3c-35f32ce6a3c9
+  bundle: page
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: true
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: 'Home'
+  created:
+    -
+      value: 1722299846
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  metatag:
+    -
+      tag: meta
+      attributes:
+        name: title
+        content: 'Home | Drush Site-Install'
+    -
+      tag: meta
+      attributes:
+        name: description
+        content: 'Discover the power of Drupal as a headless CMS'
+    -
+      tag: meta
+      attributes:
+        name: abstract
+        content: 'Discover the power of Drupal as a headless CMS'
+    -
+      tag: link
+      attributes:
+        rel: canonical
+        href: 'http://ddr-test.ddev.site/home'
+  path:
+    -
+      alias: /home
+      langcode: en
+      pathauto: 1
+  body:
+    -
+      value: '<p>Discover the power of Drupal as a headless CMS</p><p><a href="https://drupal-decoupled-docs.pages.dev/">Docs</a></p>'
+      format: basic_html
+      summary: ''

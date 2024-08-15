@@ -1,6 +1,6 @@
 {
-    "name": "octahedroid/drupal-decoupled-graphql-recipe",
-    "description": "Drupal installation based on standard that uses GQL to make decoupled site",
+    "name": "octahedroid/drupal-decoupled-graphql-basic-recipe",
+    "description": "A Drupal site as a starting point for a headless CMS, using a GraphQL endpoint to build a decoupled site.",
     "keywords": [
         "recipe",
         "drupal recipe",

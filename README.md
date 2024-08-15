@@ -1,6 +1,6 @@
 # Drupal Decoupled Graphql example recipe
 
-This recipe is designed to provide a starting point for a Drupal Decoupled installation that is a headless CMS, exposing a GraphQL endpoint. It is ready to be seamlessly integrated with a front end application.
+This recipe is a Drupal site as a starting point for a headless CMS, using a GraphQL endpoint to build a decoupled site. It is ready to be seamlessly integrated with a front end application.
 
 - For information related to installing Drupal read the [docs here](https://drupal-decoupled.octahedroid.com/docs/getting-started/drupal/install)
 - For information related to installing this Recipe read the [docs here](https://drupal-decoupled.octahedroid.com/docs/getting-started/drupal/extend)

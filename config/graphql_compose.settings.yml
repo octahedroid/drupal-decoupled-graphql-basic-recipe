@@ -67,4 +67,5 @@ settings:
   inflector_langcode: en
   inflector_singularize: true
   custom: {  }
+  fragments_enabled: true
 

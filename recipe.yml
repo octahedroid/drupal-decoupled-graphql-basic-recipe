@@ -46,6 +46,8 @@ install:
   - subpathauto
   - view_unpublished
   - simple_oauth
+  - webform
+  - webform_ui
   # Decoupled contrib
   - decoupled_preview_iframe
   - visual_editor
@@ -59,6 +61,7 @@ install:
   - graphql_compose_metatags
   - graphql_compose_preview
   - graphql_compose_fragments
+  - graphql_compose_webform
 
 config:
   import:
@@ -81,6 +84,20 @@ config:
     redirect: '*'
     subpathauto: '*'
     simple_oauth: '*'
+    webform:
+      - system.action.webform_archive_action
+      - system.action.webform_close_action
+      - system.action.webform_delete_action
+      - system.action.webform_open_action
+      - system.action.webform_submission_delete_action
+      - system.action.webform_submission_make_lock_action
+      - system.action.webform_submission_make_sticky_action
+      - system.action.webform_submission_make_unlock_action
+      - system.action.webform_submission_make_unsticky_action
+      - system.action.webform_unarchive_action
+      - editor.editor.webform_default
+      - filter.format.webform_default
+      - views.view.webform_submissions
     # Decoupled contrib
     graphql_compose: '*'
   actions:
@@ -177,4 +194,6 @@ config:
         remember_clients: true
         use_implicit: false
         disable_openid_connect: false
-
+    webform.settings:
+      simple_config_update:
+        ui.promotions_disabled: true

@@ -33,14 +33,12 @@ install:
   - options
   - views_ui
   # Contrib
-  - admin_toolbar
-  - admin_toolbar_tools
-  - admin_toolbar_search
   - gin
   - gin_login
   - gin_toolbar
   - coffee
   - metatag
+  - navigation_extra_tools
   - pathauto
   - redirect
   - subpathauto
@@ -50,7 +48,6 @@ install:
   - webform_ui
   # Decoupled contrib
   - decoupled_preview_iframe
-  - visual_editor
   - graphql_compose
   - graphql_compose_edges
   - graphql_compose_image_style
@@ -65,21 +62,16 @@ install:
 
 config:
   import:
-    admin_toolbar: '*'
-    admin_toolbar_tools: '*'
-    admin_toolbar_search: '*'
     gin:
-      - gin.settings
       - block.block.gin_breadcrumbs
       - block.block.gin_content
-      - block.block.gin_help
       - block.block.gin_local_actions
       - block.block.gin_messages
       - block.block.gin_page_title
       - block.block.gin_primary_local_tasks
     gin_login: '*'
-    coffee: '*'
     metatag: '*'
+    navigation_extra_tools: '*'
     pathauto: '*'
     redirect: '*'
     subpathauto: '*'
@@ -107,35 +99,30 @@ config:
         page.front: /home
     # Set and unset Gin blocks.
     block.block.gin_admin:
-      simple_config_update:
+      simpleConfigUpdate:
         status: false
     block.block.gin_branding:
-      simple_config_update:
+      simpleConfigUpdate:
+        status: false
+    block.block.gin_tools:
+      simpleConfigUpdate:
+        status: false
+    block.block.gin_local_tasks:
+      simpleConfigUpdate:
         status: false
     block.block.gin_local_actions:
-      simple_config_update:
+      simpleConfigUpdate:
         region: content
         weight: -10
-    block.block.gin_local_tasks:
-      simple_config_update:
-        status: false
     block.block.gin_page_title:
-      simple_config_update:
+      simpleConfigUpdate:
         region: header
         weight: -10
     block.block.gin_primary_local_tasks:
-      simple_config_update:
+      simpleConfigUpdate:
         region: header
         weight: -5
         settings.secondary: true
-    block.block.gin_tools:
-      simple_config_update:
-        status: false
-    # Set blocks to us as default content
-    block.block.gin_content:
-      simple_config_update:
-        status: content
-        weight: -5
     # Update the admin theme to Gin in Theme settings.
     node.settings:
       simple_config_update:
@@ -170,6 +157,7 @@ config:
         weight: 4
         is_admin: false
         permissions:
+          - 'access any webform configuration'
           - 'execute graphql_compose_server arbitrary graphql requests'
           - 'view all revisions'
           - 'view any unpublished content'
@@ -182,6 +170,7 @@ config:
         weight: 5
         is_admin: false
         permissions:
+          - 'access any webform configuration'
           - 'execute graphql_compose_server arbitrary graphql requests'
     simple_oauth.settings:
       simple_config_update:
